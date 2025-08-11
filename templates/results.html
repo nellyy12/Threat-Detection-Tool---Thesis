@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results for {{ domain }}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      pre {
+        background: #f8f9fa;
+        padding: 1em;
+        border-radius: 5px;
+      }
+      .masonry {
+        column-count: 1;
+      }
+      @media (min-width: 768px) {
+        .masonry {
+          column-count: 2;
+          column-gap: 2rem;
+        }
+      }
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">Results for <span class="text-primary">{{ domain }}</span></h1>
+      <div id="ai-analysis-box" class="mb-4">
+        <div class="card border-info">
+          <div class="card-header bg-info text-white">
+            <strong>AI Brand Value Analysis</strong>
+          </div>
+          <div class="card-body">
+            <div id="ai-analysis-loading">
+              <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <span class="ms-2">Analyzing brand value...</span>
+            </div>
+            <div id="ai-analysis-nice" style="display: none"></div>
+            <pre id="ai-analysis-result" style="display: none"></pre>
+          </div>
+        </div>
+      </div>
+      <a href="/" class="btn btn-secondary mb-4">&larr; New Search</a>
+      {% if data %}
+      <div class="masonry">
+        {% for key, value in data.items() %}
+        <div class="masonry-item">
+          <div class="card">
+            <div class="card-header bg-dark text-white">{{ key.replace('_', ' ').title() }}</div>
+            <div class="card-body">
+              {% if key == 'github' and value is sequence and value and value[0]['name'] is defined
+              %} {% for repo in value %}
+              <div class="mb-3">
+                <h5><a href="{{ repo.url }}" target="_blank">{{ repo.name }}</a></h5>
+                <p class="text-muted">{{ repo.description or 'No description provided.' }}</p>
+              </div>
+              {% if not loop.last %}
+              <hr />
+              {% endif %} {% endfor %} {% elif key == 'hackedlist' and value is mapping and
+              value.get('subdomains') %}
+              <div>
+                <h5>
+                  Compromised:
+                  <span class="badge bg-{{ 'danger' if value['compromised'] else 'success' }}"
+                    >{{ 'Yes' if value['compromised'] else 'No' }}</span
+                  >
+                </h5>
+                <h6 class="mt-3">Subdomains:</h6>
+                {% for sub in value['subdomains'] %} {% set breach_class = 'border-success' if
+                sub['count'] == 0 else 'border-danger' if sub['count'] > 500 else 'border-warning'
+                %}
+                <div class="card mb-3 {{ breach_class }}" style="border-width: 2px">
+                  <div
+                    class="card-header {% if sub['count'] == 0 %}bg-success text-white{% elif sub['count'] > 500 %}bg-danger text-white{% else %}bg-warning text-dark{% endif %}"
+                  >
+                    <strong>{{ sub['subdomain'] }}</strong>
+                    <span
+                      class="badge {% if sub['count'] == 0 %}bg-success{% elif sub['count'] > 500 %}bg-danger{% else %}bg-warning text-dark{% endif %}"
+                    >
+                      {{ sub['count'] }} breaches
+                    </span>
+                    {% if sub['count'] == 0 %}
+                    <span class="ms-2">&#x2714; No breaches</span>
+                    {% endif %}
+                  </div>
+                  <div class="card-body">
+                    <h6>Countries:</h6>
+                    <table class="table table-sm table-bordered w-auto">
+                      <thead>
+                        <tr>
+                          <th>Code</th>
+                          <th>Count</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for country in sub['countries'] %}
+                        <tr>
+                          <td>{{ country['code'] }}</td>
+                          <td>{{ country['count'] }}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                    <div>
+                      <strong>Index Time:</strong><br />
+                      Min: {{ sub['index_time']['min'] | to_unix | datetimeformat }}<br />
+                      Max: {{ sub['index_time']['max'] | to_unix | datetimeformat }}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              {% elif key.startswith('reddit') and value is sequence and value and value[0]['title']
+              is defined %} {% for post in value %}
+              <div class="mb-3">
+                <h5><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></h5>
+                <p class="text-muted">{{ post.permalink }}</p>
+              </div>
+              {% if not loop.last %}
+              <hr />
+              {% endif %} {% endfor %} {% elif key.startswith('pastebin_psbdmp') and value is
+              mapping and value['search_type'] is defined %}
+              <div>
+                <strong>Search Type:</strong> {{ value['search_type']|capitalize }}<br />
+                <strong>Term:</strong> {{ value['term'] }}<br />
+                <strong>Results:</strong> {{ value['count'] }}<br />
+                {% if value['urls'] and value['urls']|length > 0 %}
+                <ul>
+                  {% for url in value['urls'] %}
+                  <li><a href="{{ url }}" target="_blank">{{ url }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% else %}
+                <span class="text-muted">No results found.</span>
+                {% endif %}
+              </div>
+              {% elif value is mapping and value.get('error') %}
+              <div class="alert alert-warning">
+                No data found or access denied for this platform.
+              </div>
+              {% elif value is mapping or value is sequence %}
+              <pre>{{ value | tojson(indent=2) }}</pre>
+              {% else %}
+              <pre>{{ value }}</pre>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="alert alert-warning">No results found for this domain.</div>
+      {% endif %}
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const domain = '{{ domain }}';
+        fetch(`/ai_analysis/${domain}`)
+          .then((res) => res.json())
+          .then((data) => {
+            document.getElementById('ai-analysis-loading').style.display = 'none';
+            const resultBox = document.getElementById('ai-analysis-result');
+            const niceBox = document.getElementById('ai-analysis-nice');
+            // Try to parse the AI response
+            const match = data.result.match(
+              /Brand Value Index:\s*(\d+(?:\.\d+)?)\s*\/\s*10[\s\n\r]+Reason:\s*([\s\S]*)/i,
+            );
+            if (match) {
+              const score = parseFloat(match[1]);
+              const reason = match[2].trim();
+              let badgeClass = 'bg-success';
+              if (score < 4) badgeClass = 'bg-danger';
+              else if (score < 7) badgeClass = 'bg-warning text-dark';
+              niceBox.innerHTML = `
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="display-4 fw-bold me-3">${score}/10</span>
+                        <span class="badge ${badgeClass} fs-5">Brand Value Index</span>
+                    </div>
+                    <div class="progress mb-3" style="height: 1.5rem;">
+                        <div class="progress-bar ${badgeClass}" role="progressbar" style="width: ${
+                score * 10
+              }%" aria-valuenow="${score * 10}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div><strong>Reason:</strong> ${reason}</div>
+                `;
+              niceBox.style.display = 'block';
+            } else {
+              resultBox.style.display = 'block';
+              resultBox.textContent = data.result;
+            }
+          })
+          .catch((err) => {
+            document.getElementById('ai-analysis-loading').style.display = 'none';
+            const resultBox = document.getElementById('ai-analysis-result');
+            resultBox.style.display = 'block';
+            resultBox.textContent = 'Error fetching AI analysis.';
+          });
+      });
+    </script>
+  </body>
+</html>

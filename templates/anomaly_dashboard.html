@@ -1,0 +1,79 @@
+<!-- templates/anomaly_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Anomaly Detection Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #f0f0f0;
+        padding: 20px;
+      }
+      h1 {
+        color: #00ffc8;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #1e1e1e;
+      }
+      th,
+      td {
+        border: 1px solid #444;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #2c2c2c;
+      }
+      tr.anomaly {
+        background-color: #3d1f1f;
+      }
+      tr.normal {
+        background-color: #1f3d2b;
+      }
+      .status {
+        font-weight: bold;
+      }
+      .status.normal {
+        color: #00ff88;
+      }
+      .status.anomaly {
+        color: #ff4f4f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Anomaly Detection Dashboard</h1>
+
+    {% if logs %}
+    <table>
+      <thead>
+        <tr>
+          <th>Session ID</th>
+          <th>Username</th>
+          <th>Timestamp</th>
+          <th>Status</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+        <tr class="{{ log.prediction|lower }}">
+          <td>{{ log.session_id }}</td>
+          <td>{{ log.username }}</td>
+          <td>{{ log.timestamp }}</td>
+          <td class="status {{ log.prediction|lower }}">{{ log.prediction }}</td>
+          <td>{{ log.score }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No logs found or something went wrong with prediction.</p>
+    {% endif %}
+  </body>
+</html> 
