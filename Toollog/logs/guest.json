@@ -1,0 +1,133 @@
+{
+    "1754831124104rr5wlv7g5q": {
+        "session_id": "1754831124104rr5wlv7g5q",
+        "user_id": "guest",
+        "browser": "Chrome",
+        "os": "Win32",
+        "device_type": "Desktop",
+        "ip_address": "",
+        "login_time": "2025-08-10T13:08:06.551Z",
+        "pages_visited": [
+            "\/customer_home",
+            "\/customer_profile",
+            "\/customer_transactions",
+            "\/beneficiary",
+            "\/home"
+        ],
+        "click_count": 0,
+        "repeated_failed_logins": 0,
+        "vpn_detected": false,
+        "transactions_initiated": 0,
+        "beneficiaries_added": 0,
+        "input_logs": [],
+        "logout_time": "2025-08-10T13:08:08.671Z",
+        "session_duration": 2
+    },
+    "1754830407703zbifz35l5j": {
+        "session_id": "1754830407703zbifz35l5j",
+        "user_id": "guest",
+        "browser": "Chrome",
+        "os": "Win32",
+        "device_type": "Desktop",
+        "ip_address": "",
+        "login_time": "2025-08-10T13:30:24.612Z",
+        "pages_visited": [
+            "\/home",
+            "\/customer_home",
+            "\/atm_simulator",
+            "\/beneficiary",
+            "\/customer_transactions"
+        ],
+        "click_count": 1,
+        "repeated_failed_logins": 0,
+        "vpn_detected": false,
+        "transactions_initiated": 0,
+        "beneficiaries_added": 0,
+        "input_logs": [
+            "nelly",
+            "nelly123",
+            "salman",
+            "salman123"
+        ],
+        "logout_time": "2025-08-10T13:30:27.891Z",
+        "session_duration": 3
+    },
+    "17548976232758mmj1ftrmjj": {
+        "session_id": "17548976232758mmj1ftrmjj",
+        "user_id": "guest",
+        "browser": "Chrome",
+        "os": "Win32",
+        "device_type": "Desktop",
+        "ip_address": "",
+        "login_time": "2025-08-11T07:35:34.766Z",
+        "pages_visited": [
+            "\/",
+            "\/customer_home",
+            "\/home"
+        ],
+        "click_count": 1,
+        "repeated_failed_logins": 0,
+        "vpn_detected": false,
+        "transactions_initiated": 0,
+        "beneficiaries_added": 0,
+        "input_logs": [
+            "salman",
+            "salman123"
+        ],
+        "logout_time": "2025-08-11T07:35:41.287Z",
+        "session_duration": 6
+    },
+    "17548977456552ghyoev60p2": {
+        "session_id": "17548977456552ghyoev60p2",
+        "user_id": "guest",
+        "browser": "Chrome",
+        "os": "Win32",
+        "device_type": "Desktop",
+        "ip_address": "",
+        "login_time": "2025-08-11T07:36:17.239Z",
+        "pages_visited": [
+            "\/",
+            "\/customer_home",
+            "\/home"
+        ],
+        "click_count": 0,
+        "repeated_failed_logins": 0,
+        "vpn_detected": false,
+        "transactions_initiated": 0,
+        "beneficiaries_added": 0,
+        "input_logs": [
+            "salman",
+            "salman123"
+        ],
+        "logout_time": "2025-08-11T07:36:18.290Z",
+        "session_duration": 1
+    },
+    "1754897826918gs7ydw6n5qp": {
+        "session_id": "1754897826918gs7ydw6n5qp",
+        "user_id": "guest",
+        "browser": "Chrome",
+        "os": "Win32",
+        "device_type": "Desktop",
+        "ip_address": "",
+        "login_time": "2025-08-11T07:45:48.446Z",
+        "pages_visited": [
+            "\/",
+            "\/customer_home",
+            "\/home",
+            "\/customer_transactions"
+        ],
+        "click_count": 2,
+        "repeated_failed_logins": 0,
+        "vpn_detected": false,
+        "transactions_initiated": 0,
+        "beneficiaries_added": 0,
+        "input_logs": [
+            "salman",
+            "salman123",
+            "nelly",
+            "nelly123"
+        ],
+        "logout_time": "2025-08-11T07:45:52.670Z",
+        "session_duration": 4
+    }
+}
