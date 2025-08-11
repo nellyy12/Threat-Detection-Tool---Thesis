@@ -1,0 +1,74 @@
+{
+  "domain": "schoolworkspro.com",
+  "compromised": true,
+  "subdomains": [
+    {
+      "subdomain": "schoolworkspro.com",
+      "count": 2232,
+      "index_time": {
+        "min": "1659017931000.0",
+        "max": "1753350723000.0"
+      },
+      "countries": [
+        {
+          "code": "NP",
+          "count": 474
+        },
+        {
+          "code": "US",
+          "count": 2
+        },
+        {
+          "code": "BD",
+          "count": 1
+        },
+        {
+          "code": "TR",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "subdomain": "exam.schoolworkspro.com",
+      "count": 288,
+      "index_time": {
+        "min": "1708600985000.0",
+        "max": "1751416664000.0"
+      },
+      "countries": [
+        {
+          "code": "NP",
+          "count": 54
+        }
+      ]
+    },
+    {
+      "subdomain": "www.schoolworkspro.com",
+      "count": 96,
+      "index_time": {
+        "min": "1711860806000.0",
+        "max": "1749501216000.0"
+      },
+      "countries": [
+        {
+          "code": "NP",
+          "count": 38
+        }
+      ]
+    },
+    {
+      "subdomain": "admin.schoolworkspro.com",
+      "count": 57,
+      "index_time": {
+        "min": "1663950505000.0",
+        "max": "1751320953000.0"
+      },
+      "countries": [
+        {
+          "code": "NP",
+          "count": 12
+        }
+      ]
+    }
+  ]
+}

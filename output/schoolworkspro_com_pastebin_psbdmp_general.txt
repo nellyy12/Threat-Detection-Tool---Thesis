@@ -1,0 +1,6 @@
+{
+  "search_type": "general",
+  "term": "schoolworkspro.com",
+  "count": 0,
+  "urls": []
+}

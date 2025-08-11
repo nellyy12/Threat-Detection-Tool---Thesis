@@ -1,0 +1,17 @@
+[
+  {
+    "name": "1lastBr3ath/drmine",
+    "url": "https://github.com/1lastBr3ath/drmine",
+    "description": "Dr. Mine is a node script written to aid automatic detection of in-browser cryptojacking."
+  },
+  {
+    "name": "AyushXtha/turo",
+    "url": "https://github.com/AyushXtha/turo",
+    "description": null
+  },
+  {
+    "name": "cranelab/webapp-tech",
+    "url": "https://github.com/cranelab/webapp-tech",
+    "description": null
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "search_type": "general",
+  "term": "cm2.pw",
+  "count": 0,
+  "urls": []
+}

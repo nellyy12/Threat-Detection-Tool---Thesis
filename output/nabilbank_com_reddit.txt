@@ -1,0 +1,22 @@
+[
+  {
+    "title": "5% tax on usd salary",
+    "url": "https://www.reddit.com/r/technepal/comments/1bbujyy/5_tax_on_usd_salary/",
+    "permalink": "https://reddit.com/r/technepal/comments/1bbujyy/5_tax_on_usd_salary/"
+  },
+  {
+    "title": "free for women, 50% for men. khule aam vedbhav",
+    "url": "https://i.redd.it/891j9s6l7ij91.jpg",
+    "permalink": "https://reddit.com/r/Nepal/comments/wvvrff/free_for_women_50_for_men_khule_aam_vedbhav/"
+  },
+  {
+    "title": "Wire transfer to Nepal from US",
+    "url": "https://i.redd.it/m9whgqa42c6b1.png",
+    "permalink": "https://reddit.com/r/technepal/comments/14aq9x2/wire_transfer_to_nepal_from_us/"
+  },
+  {
+    "title": "\"Free inward remittance\"?",
+    "url": "https://www.reddit.com/r/Nepal/comments/153okn6/free_inward_remittance/",
+    "permalink": "https://reddit.com/r/Nepal/comments/153okn6/free_inward_remittance/"
+  }
+]

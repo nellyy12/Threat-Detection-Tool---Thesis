@@ -1,0 +1,8 @@
+{
+  "search_type": "email",
+  "term": "nabilbank.com",
+  "count": 1,
+  "urls": [
+    "https://psbdmp.ws/xXgVNirb"
+  ]
+}

@@ -1,0 +1,226 @@
+{
+    "domain": "nabilbank.com",
+    "compromised": true,
+    "subdomains": [
+        {
+            "subdomain": "nbank.nabilbank.com",
+            "count": 1254,
+            "index_time": {
+                "min": "1683210128000.0",
+                "max": "1753184740000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 469
+                },
+                {
+                    "code": "AE",
+                    "count": 16
+                },
+                {
+                    "code": "IN",
+                    "count": 7
+                },
+                {
+                    "code": "KR",
+                    "count": 5
+                },
+                {
+                    "code": "CA",
+                    "count": 2
+                },
+                {
+                    "code": "DK",
+                    "count": 1
+                },
+                {
+                    "code": "GB",
+                    "count": 1
+                },
+                {
+                    "code": "PK",
+                    "count": 1
+                },
+                {
+                    "code": "QA",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "subdomain": "banksmart.nabilbank.com",
+            "count": 528,
+            "index_time": {
+                "min": "1658152141000.0",
+                "max": "1751542741000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 205
+                },
+                {
+                    "code": "AU",
+                    "count": 4
+                },
+                {
+                    "code": "IN",
+                    "count": 3
+                },
+                {
+                    "code": "JP",
+                    "count": 3
+                },
+                {
+                    "code": "GB",
+                    "count": 2
+                },
+                {
+                    "code": "AE",
+                    "count": 1
+                },
+                {
+                    "code": "AT",
+                    "count": 1
+                },
+                {
+                    "code": "EG",
+                    "count": 1
+                },
+                {
+                    "code": "KY",
+                    "count": 1
+                },
+                {
+                    "code": "PH",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "subdomain": "ibanking.nabilbank.com",
+            "count": 214,
+            "index_time": {
+                "min": "1666554916000.0",
+                "max": "1745053607000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 85
+                },
+                {
+                    "code": "IN",
+                    "count": 2
+                },
+                {
+                    "code": "AU",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "subdomain": "enabil.nabilbank.com",
+            "count": 74,
+            "index_time": {
+                "min": "1669641223000.0",
+                "max": "1750695971000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 29
+                }
+            ]
+        },
+        {
+            "subdomain": "hpp.nabilbank.com",
+            "count": 42,
+            "index_time": {
+                "min": "1747114699000.0",
+                "max": "1752659216000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 7
+                }
+            ]
+        },
+        {
+            "subdomain": "www.nabilbank.com",
+            "count": 22,
+            "index_time": {
+                "min": "1661819067000.0",
+                "max": "1750196921000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 14
+                },
+                {
+                    "code": "MV",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "subdomain": "digibasket.nabilbank.com",
+            "count": 8,
+            "index_time": {
+                "min": "1669886824000.0",
+                "max": "1669886824000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "subdomain": "testdigibasket.nabilbank.com",
+            "count": 4,
+            "index_time": {
+                "min": "1669886824000.0",
+                "max": "1669886824000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "subdomain": "testdigihost.nabilbank.com",
+            "count": 4,
+            "index_time": {
+                "min": "1669886824000.0",
+                "max": "1672951517000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "subdomain": "apps.nabilbank.com",
+            "count": 1,
+            "index_time": {
+                "min": "1719252448000.0",
+                "max": "1719252448000.0"
+            },
+            "countries": [
+                {
+                    "code": "NP",
+                    "count": 1
+                }
+            ]
+        }
+    ]
+}
