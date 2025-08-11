@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+praw
+PyGithub
+tweepy 
+openai==0.28
